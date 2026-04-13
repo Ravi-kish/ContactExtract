@@ -246,11 +246,14 @@ export async function runIngestionPipeline(opts: IngestionOptions): Promise<Inge
       totalFailed === 0 ? 'COMPLETE' :
       totalInserted > 0 ? 'PARTIAL' : 'FAILED';
 
-    // 4. Final DB update
+    // 4. Final DB update — count actual inserted records
+    const actualCount = await db('cdr_records').where({ upload_id: uploadId }).count('id as count').first();
+    const finalCount = parseInt(String(actualCount?.count || totalInserted), 10);
+
     await db('uploads').where({ id: uploadId }).update({
       status,
       completed_at: db.fn.now(),
-      record_count: totalInserted,
+      record_count: finalCount,
       error_count: totalFailed,
     });
 

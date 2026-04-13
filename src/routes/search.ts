@@ -146,7 +146,7 @@ router.get('/export', authenticate, async (req: AuthRequest, res: Response): Pro
     if (format === 'xlsx') {
       const ws = XLSX.utils.json_to_sheet(records);
       const wb = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(wb, ws, 'CDR Records');
+      XLSX.utils.book_append_sheet(wb, ws, 'Records');
       const buffer = XLSX.write(wb, { type: 'buffer', bookType: 'xlsx' });
       res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
       res.setHeader('Content-Disposition', 'attachment; filename="cdr_export.xlsx"');

@@ -14,10 +14,24 @@ import { errorHandler } from './middleware/errorHandler';
 const app = express();
 
 // Security
-app.use(helmet());
+app.use(helmet({
+  crossOriginEmbedderPolicy: false,
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'"],
+      styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
+      fontSrc: ["'self'", 'https://fonts.gstatic.com'],
+      imgSrc: ["'self'", 'data:'],
+      connectSrc: ["'self'"],
+    },
+  },
+}));
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || '*',
+  origin: process.env.CORS_ORIGIN || 'http://localhost:4200',
   credentials: true,
+  methods: ['GET', 'POST', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
 // Rate limiting

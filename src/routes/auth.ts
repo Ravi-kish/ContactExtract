@@ -12,8 +12,8 @@ const router = Router();
 router.post(
   '/login',
   [
-    body('email').isEmail().normalizeEmail(),
-    body('password').notEmpty().isLength({ min: 6 }),
+    body('username').notEmpty().trim(),
+    body('password').notEmpty().isLength({ min: 4 }),
   ],
   async (req: Request, res: Response): Promise<void> => {
     const errors = validationResult(req);
@@ -22,10 +22,16 @@ router.post(
       return;
     }
 
-    const { email, password } = req.body;
+    const { username, password } = req.body;
 
     try {
-      const user = await db('users').where({ email, is_active: true }).first();
+      // Accept login by username OR email
+      const user = await db('users')
+        .where({ is_active: true })
+        .where(function() {
+          this.where('username', username).orWhere('email', username);
+        })
+        .first();
 
       if (!user || !(await bcrypt.compare(password, user.password_hash))) {
         res.status(401).json({ error: 'Invalid credentials' });
