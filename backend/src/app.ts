@@ -20,14 +20,23 @@ app.use(helmet({
 }));
 
 // CORS — allow configured origins
+const allowedOrigins = (process.env.CORS_ORIGIN || 'http://localhost:4200')
+  .split(',')
+  .map(o => o.trim());
+
 app.use(cors({
-  origin: true, // reflect request origin — works for all domains
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(null, true); // allow all for now — lock down after DB is working
+    }
+  },
   credentials: true,
   methods: ['GET', 'POST', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
-// Handle preflight
 app.options('*', cors());
 
 // Rate limiting
