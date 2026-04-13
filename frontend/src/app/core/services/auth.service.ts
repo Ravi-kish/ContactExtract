@@ -1,7 +1,8 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, signal, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs/operators';
+import { ActivityService } from './activity.service';
 
 export interface User {
   id: string;
@@ -19,17 +20,21 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  login(email: string, password: string) {
-    return this.http.post<{ token: string; user: User }>('/api/auth/login', { email, password }).pipe(
+  private activity = inject(ActivityService);
+
+  login(username: string, password: string) {
+    return this.http.post<{ token: string; user: User }>('/api/auth/login', { username, password }).pipe(
       tap(({ token, user }) => {
         localStorage.setItem(this.TOKEN_KEY, token);
         localStorage.setItem(this.USER_KEY, JSON.stringify(user));
         this.currentUser.set(user);
+        this.activity.start();
       })
     );
   }
 
   logout(): void {
+    this.activity.stop();
     localStorage.removeItem(this.TOKEN_KEY);
     localStorage.removeItem(this.USER_KEY);
     this.currentUser.set(null);

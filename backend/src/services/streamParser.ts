@@ -245,80 +245,54 @@ export async function streamParseExcel(
   let failedRows = 0;
   let batchIndex = 0;
 
-  // Use ExcelJS for streaming — memory efficient
   const ExcelJS = await import('exceljs');
-  const workbook = new ExcelJS.default.stream.xlsx.WorkbookReader(filePath, {
-    sharedStrings: 'cache',
-    hyperlinks: 'ignore',
-    worksheets: 'emit',
-    entries: 'emit',
-  });
+  const workbook = new ExcelJS.default.Workbook();
+  await workbook.xlsx.readFile(filePath);
+
+  const worksheet = workbook.worksheets[0];
+  if (!worksheet) {
+    return { totalRows: 0, successRows: 0, failedRows: 0, durationMs: Date.now() - startTime };
+  }
 
   let columnMapping: Record<string, string> | null = null;
   let headers: string[] = [];
   let batch: ParsedRecord[] = [];
 
-  await new Promise<void>((resolve, reject) => {
-    workbook.on('worksheet', (worksheet: any) => {
-      worksheet.on('row', async (row: any) => {
-        const values = row.values as (string | number | null | undefined)[];
-        // ExcelJS row.values is 1-indexed
-        const cells = values.slice(1).map(v =>
-          v === null || v === undefined ? '' : String(v).trim()
-        );
+  worksheet.eachRow({ includeEmpty: false }, (row) => {
+    const cells = row.values as (string | number | null | undefined)[];
+    const values = cells.slice(1).map(v =>
+      v === null || v === undefined ? '' : String(v).trim()
+    );
 
-        if (!columnMapping) {
-          headers = cells;
-          columnMapping = buildColumnMapping(headers);
-          return;
-        }
+    if (!columnMapping) {
+      headers = values;
+      columnMapping = buildColumnMapping(headers);
+      return;
+    }
 
-        totalRows++;
-        try {
-          const rawRow: Record<string, unknown> = {};
-          headers.forEach((h, i) => { rawRow[h] = cells[i] ?? null; });
-
-          const { mapped, unmapped } = mapRow(rawRow, columnMapping);
-          const record = transformRow(mapped, unmapped);
-          batch.push(record);
-
-          if (batch.length >= batchSize) {
-            const currentBatch = batch.splice(0, batch.length);
-            try {
-              await onBatch(currentBatch, batchIndex++);
-              successRows += currentBatch.length;
-            } catch (err) {
-              failedRows += currentBatch.length;
-              logger.error(`Batch ${batchIndex} insert failed:`, err);
-            }
-            onProgress?.(totalRows, failedRows);
-          }
-        } catch {
-          failedRows++;
-        }
-      });
-
-      worksheet.on('error', reject);
-    });
-
-    workbook.on('end', async () => {
-      // Flush final batch
-      if (batch.length > 0) {
-        try {
-          await onBatch(batch, batchIndex++);
-          successRows += batch.length;
-        } catch (err) {
-          failedRows += batch.length;
-          logger.error('Final batch insert failed:', err);
-        }
-        batch = [];
-      }
-      resolve();
-    });
-
-    workbook.on('error', reject);
-    workbook.read().catch(reject);
+    totalRows++;
+    try {
+      const rawRow: Record<string, unknown> = {};
+      headers.forEach((h, i) => { rawRow[h] = values[i] ?? null; });
+      const { mapped, unmapped } = mapRow(rawRow, columnMapping);
+      batch.push(transformRow(mapped, unmapped));
+    } catch {
+      failedRows++;
+    }
   });
+
+  // Process all batches sequentially after reading
+  for (let i = 0; i < batch.length; i += batchSize) {
+    const chunk = batch.slice(i, i + batchSize);
+    try {
+      await onBatch(chunk, batchIndex++);
+      successRows += chunk.length;
+    } catch (err) {
+      failedRows += chunk.length;
+      logger.error(`Batch ${batchIndex} insert failed:`, err);
+    }
+    onProgress?.(successRows + failedRows, failedRows);
+  }
 
   return {
     totalRows,

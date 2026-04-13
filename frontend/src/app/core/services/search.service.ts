@@ -75,6 +75,14 @@ export class SearchService {
     return this.http.get<CdrRecord>(`/api/records/${id}`);
   }
 
+  exportResults(q: string, format: 'csv' | 'xlsx'): Observable<Blob> {
+    const params = new HttpParams().set('q', q).set('format', format);
+    return this.http.get('/api/search/export', {
+      params,
+      responseType: 'blob',
+    });
+  }
+
   exportUrl(q: string, format: 'csv' | 'xlsx'): string {
     const token = localStorage.getItem('cdr_token');
     return `/api/search/export?q=${encodeURIComponent(q)}&format=${format}&token=${token}`;

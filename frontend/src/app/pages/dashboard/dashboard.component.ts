@@ -12,7 +12,7 @@ import { ToastService } from '../../core/services/toast.service';
   template: `
     <div class="page-header">
       <h1>Upload Dashboard</h1>
-      <p>Manage all CDR upload batches</p>
+      <p>Manage all telecom record upload batches</p>
     </div>
 
     <div class="page-body">
@@ -67,7 +67,7 @@ import { ToastService } from '../../core/services/toast.service';
           <div class="empty-state">
             <span class="material-icons">inbox</span>
             <h3>No uploads yet</h3>
-            <p>Upload CDR files to get started</p>
+          <p>Upload records to get started</p>
           </div>
         } @else {
           <div class="table-wrapper">
@@ -248,7 +248,7 @@ export class DashboardComponent implements OnInit {
         this.totalPages = Math.ceil(pagination.total / 20);
         this.totalRecords = data.reduce((sum, u) => sum + Number(u.record_count), 0);
         this.completeUploads = data.filter(u => u.status === 'COMPLETE').length;
-        this.processingUploads = data.filter(u => u.status === 'PROCESSING').length;
+        this.processingUploads = data.filter(u => u.status === 'PROCESSING' || u.status === 'PENDING').length;
         this.loading = false;
       },
       error: () => { this.toast.error('Failed to load uploads'); this.loading = false; },

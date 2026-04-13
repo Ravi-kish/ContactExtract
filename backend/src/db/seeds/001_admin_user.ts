@@ -8,19 +8,13 @@ export async function seed(knex: Knex): Promise<void> {
   await knex('users').insert([
     {
       id: uuidv4(),
-      email: 'admin@cdr-system.local',
-      password_hash: await bcrypt.hash('Admin@123', 12),
-      name: 'System Administrator',
+      email: 'vamsi@ionora.local',
+      username: 'U212521',
+      password_hash: await bcrypt.hash('Vamsi$2125', 12),
+      name: 'Vamsi',
       role: 'admin',
-    },
-    {
-      id: uuidv4(),
-      email: 'analyst@cdr-system.local',
-      password_hash: await bcrypt.hash('Analyst@123', 12),
-      name: 'CDR Analyst',
-      role: 'analyst',
     },
   ]);
 
-  console.log('✅ Users seeded: admin@cdr-system.local / Admin@123');
+  console.log('✅ User seeded');
 }

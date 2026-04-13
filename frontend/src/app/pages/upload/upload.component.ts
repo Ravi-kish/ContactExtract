@@ -16,8 +16,8 @@ interface FileItem {
   imports: [CommonModule, FormsModule],
   template: `
     <div class="page-header">
-      <h1>Upload CDR Files</h1>
-      <p>Upload CSV or Excel CDR files for processing and analysis</p>
+      <h1>Upload Telecom Records</h1>
+      <p>Upload CSV or Excel files for processing and analysis</p>
     </div>
 
     <div class="page-body">

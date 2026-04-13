@@ -12,8 +12,8 @@ import { RecordDetailComponent } from './record-detail.component';
   imports: [CommonModule, FormsModule, RecordDetailComponent],
   template: `
     <div class="page-header">
-      <h1>Search CDR Records</h1>
-      <p>Search across all uploaded CDR data by any field</p>
+      <h1>Search Records</h1>
+      <p>Search across all uploaded telecom data by any field</p>
     </div>
 
     <div class="page-body">
@@ -357,8 +357,21 @@ export class SearchComponent implements OnInit {
   }
 
   exportResults(format: 'csv' | 'xlsx'): void {
-    const url = this.searchService.exportUrl(this.globalQuery, format);
-    window.open(url, '_blank');
+    if (!this.result || this.result.data.length === 0) return;
+
+    const q = this.globalQuery;
+    this.searchService.exportResults(q, format).subscribe({
+      next: (blob) => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        const safeName = this.globalQuery.replace(/[^a-zA-Z0-9]/g, '_').substring(0, 30);
+        a.download = `ionora_${safeName}_${new Date().toISOString().split('T')[0]}.${format}`;
+        a.click();
+        window.URL.revokeObjectURL(url);
+      },
+      error: () => this.toast.error('Export failed'),
+    });
   }
 
   hasAdvancedFilters(): boolean {

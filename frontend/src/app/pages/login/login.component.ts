@@ -14,16 +14,15 @@ import { ToastService } from '../../core/services/toast.service';
       <div class="login-card">
         <div class="login-header">
           <span class="material-icons logo-icon">analytics</span>
-          <h1>CDR Intelligence Platform</h1>
-          <p>Telecom Investigation & Analysis System</p>
+          <h1>IONORA</h1>
         </div>
 
         <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
           <div class="form-group">
-            <label class="form-label">Email Address</label>
+            <label class="form-label">User ID</label>
             <input
-              type="email" class="form-control" placeholder="analyst@cdr-system.local"
-              [(ngModel)]="email" name="email" required autocomplete="email" autofocus>
+              type="text" class="form-control" placeholder="Enter your user ID"
+              [(ngModel)]="email" name="username" required autocomplete="username" autofocus>
           </div>
           <div class="form-group">
             <label class="form-label">Password</label>
@@ -54,10 +53,6 @@ import { ToastService } from '../../core/services/toast.service';
           </button>
         </form>
 
-        <div class="login-hint">
-          <p>Default credentials:</p>
-          <code>admin&#64;cdr-system.local / Admin&#64;123</code>
-        </div>
       </div>
     </div>
   `,

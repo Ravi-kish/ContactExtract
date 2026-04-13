@@ -218,3 +218,164 @@
 2026-04-11T13:50:02.336Z [[32minfo[39m]: [Queue] Worker ready (max 3 concurrent uploads) 
 2026-04-11T13:50:02.336Z [[32minfo[39m]: [Cleanup] Orphan file cleanup scheduled (every 1h, max age 24h) 
 2026-04-11T13:50:02.339Z [[32minfo[39m]: CDR API server running on port 3000 
+2026-04-12T05:52:09.044Z [[32minfo[39m]: Database schema ready 
+2026-04-12T05:52:09.049Z [[32minfo[39m]: [Queue] Worker ready (max 3 concurrent uploads) 
+2026-04-12T05:52:09.050Z [[32minfo[39m]: [Cleanup] Orphan file cleanup scheduled (every 1h, max age 24h) 
+2026-04-12T05:52:09.058Z [[32minfo[39m]: CDR API server running on port 3000 
+2026-04-12T05:58:43.699Z [[32minfo[39m]: [Upload] 1 file(s) queued for upload e5fb0a4c-1d02-4b82-b960-03818b8154c8 
+2026-04-12T05:58:43.706Z [[32minfo[39m]: [Pipeline] Starting: test_cdr_500rows.xlsx (upload: e5fb0a4c-1d02-4b82-b960-03818b8154c8) 
+2026-04-12T05:58:45.846Z [[32minfo[39m]: [Pipeline] ✅ test_cdr_500rows.xlsx: 0 inserted, 0 failed, 2133ms, 234 rows/sec 
+2026-04-12T05:58:45.849Z [[32minfo[39m]: Cleaned up file: 1775973523662_test_cdr_500rows.xlsx 
+2026-04-12T05:58:45.850Z [[32minfo[39m]: [Queue] Job done: test_cdr_500rows.xlsx | 0 inserted | 0 failed | 2133ms | 234 rows/sec | status: COMPLETE 
+2026-04-12T05:58:46.141Z [[32minfo[39m]: Batch 0: inserted 500 rows in 356ms 
+2026-04-12T05:58:46.142Z [[34mdebug[39m]: [Pipeline] test_cdr_500rows.xlsx: 500 processed, 0 failed 
+2026-04-12T06:01:03.672Z [[32minfo[39m]: [Delete] Upload e5fb0a4c-1d02-4b82-b960-03818b8154c8 permanently deleted by 0c0062bf-6a4d-4a5c-8399-c6deb34bda51 
+2026-04-12T06:02:09.871Z [[32minfo[39m]: [Upload] 1 file(s) queued for upload 26c16d7d-b47e-43f3-a5cd-5f81e796de2f 
+2026-04-12T06:02:09.874Z [[32minfo[39m]: [Pipeline] Starting: test_cdr_500rows.xlsx (upload: 26c16d7d-b47e-43f3-a5cd-5f81e796de2f) 
+2026-04-12T06:02:10.685Z [[32minfo[39m]: [Pipeline] ✅ test_cdr_500rows.xlsx: 0 inserted, 0 failed, 800ms, 625 rows/sec 
+2026-04-12T06:02:10.688Z [[32minfo[39m]: Cleaned up file: 1775973729853_test_cdr_500rows.xlsx 
+2026-04-12T06:02:10.690Z [[32minfo[39m]: [Queue] Job done: test_cdr_500rows.xlsx | 0 inserted | 0 failed | 800ms | 625 rows/sec | status: COMPLETE 
+2026-04-12T06:02:10.980Z [[32minfo[39m]: Batch 0: inserted 500 rows in 350ms 
+2026-04-12T06:02:10.981Z [[34mdebug[39m]: [Pipeline] test_cdr_500rows.xlsx: 500 processed, 0 failed 
+2026-04-12T06:06:30.178Z [[32minfo[39m]: [Delete] Upload 26c16d7d-b47e-43f3-a5cd-5f81e796de2f permanently deleted by 0c0062bf-6a4d-4a5c-8399-c6deb34bda51 
+2026-04-12T06:07:45.793Z [[32minfo[39m]: [Upload] 2 file(s) queued for upload 0ab2c54d-a1eb-442b-8b65-5f91bc52fbf2 
+2026-04-12T06:07:45.796Z [[32minfo[39m]: [Pipeline] Starting: test_cdr_500rows.xlsx (upload: 0ab2c54d-a1eb-442b-8b65-5f91bc52fbf2) 
+2026-04-12T06:07:45.800Z [[32minfo[39m]: [Pipeline] Starting: 12345.xlsx (upload: 0ab2c54d-a1eb-442b-8b65-5f91bc52fbf2) 
+2026-04-12T06:07:46.008Z [[32minfo[39m]: Batch 0: inserted 2 rows in 44ms 
+2026-04-12T06:07:46.045Z [[32minfo[39m]: [Pipeline] ✅ 12345.xlsx: 2 inserted, 0 failed, 211ms, 9 rows/sec 
+2026-04-12T06:07:46.047Z [[32minfo[39m]: Cleaned up file: 1775974065779_12345.xlsx 
+2026-04-12T06:07:46.048Z [[32minfo[39m]: [Queue] Job done: 12345.xlsx | 2 inserted | 0 failed | 211ms | 9 rows/sec | status: COMPLETE 
+2026-04-12T06:07:46.827Z [[32minfo[39m]: [Pipeline] ✅ test_cdr_500rows.xlsx: 0 inserted, 0 failed, 1022ms, 489 rows/sec 
+2026-04-12T06:07:46.830Z [[32minfo[39m]: Cleaned up file: 1775974065765_test_cdr_500rows.xlsx 
+2026-04-12T06:07:46.832Z [[32minfo[39m]: [Queue] Job done: test_cdr_500rows.xlsx | 0 inserted | 0 failed | 1022ms | 489 rows/sec | status: COMPLETE 
+2026-04-12T06:07:47.274Z [[32minfo[39m]: Batch 0: inserted 500 rows in 503ms 
+2026-04-12T06:07:47.275Z [[34mdebug[39m]: [Pipeline] test_cdr_500rows.xlsx: 500 processed, 0 failed 
+2026-04-12T06:13:48.229Z [[32minfo[39m]: [Delete] Upload 0ab2c54d-a1eb-442b-8b65-5f91bc52fbf2 permanently deleted by 0c0062bf-6a4d-4a5c-8399-c6deb34bda51 
+2026-04-12T06:19:22.707Z [[32minfo[39m]: Database schema ready 
+2026-04-12T06:19:22.715Z [[32minfo[39m]: [Queue] Worker ready (max 3 concurrent uploads) 
+2026-04-12T06:19:22.717Z [[32minfo[39m]: [Cleanup] Orphan file cleanup scheduled (every 1h, max age 24h) 
+2026-04-12T06:19:22.728Z [[32minfo[39m]: CDR API server running on port 3000 
+2026-04-12T06:48:08.015Z [[32minfo[39m]: Shutting down... 
+2026-04-12T06:48:15.413Z [[32minfo[39m]: Database schema ready 
+2026-04-12T06:48:15.418Z [[32minfo[39m]: [Queue] Worker ready (max 3 concurrent uploads) 
+2026-04-12T06:48:15.420Z [[32minfo[39m]: [Cleanup] Orphan file cleanup scheduled (every 1h, max age 24h) 
+2026-04-12T06:48:15.427Z [[32minfo[39m]: CDR API server running on port 3000 
+2026-04-12T06:49:02.693Z [[32minfo[39m]: Shutting down... 
+2026-04-12T06:50:04.127Z [[32minfo[39m]: Database schema ready 
+2026-04-12T06:50:04.131Z [[32minfo[39m]: [Queue] Worker ready (max 3 concurrent uploads) 
+2026-04-12T06:50:04.132Z [[32minfo[39m]: [Cleanup] Orphan file cleanup scheduled (every 1h, max age 24h) 
+2026-04-12T06:50:04.136Z [[32minfo[39m]: CDR API server running on port 3000 
+2026-04-12T06:51:01.328Z [[32minfo[39m]: [Upload] 1 file(s) queued for upload f0acbbee-77fd-4bfd-9fe0-774b1a3c813d 
+2026-04-12T06:51:01.333Z [[32minfo[39m]: [Pipeline] Starting: test_cdr_500rows.xlsx (upload: f0acbbee-77fd-4bfd-9fe0-774b1a3c813d) 
+2026-04-12T06:51:04.036Z [[32minfo[39m]: [Pipeline] ✅ test_cdr_500rows.xlsx: 0 inserted, 0 failed, 2694ms, 186 rows/sec 
+2026-04-12T06:51:04.039Z [[32minfo[39m]: Cleaned up file: 1775976661298_test_cdr_500rows.xlsx 
+2026-04-12T06:51:04.041Z [[32minfo[39m]: [Queue] Job done: test_cdr_500rows.xlsx | 0 inserted | 0 failed | 2694ms | 186 rows/sec | status: COMPLETE 
+2026-04-12T06:51:04.440Z [[32minfo[39m]: Batch 0: inserted 500 rows in 510ms 
+2026-04-12T06:51:04.441Z [[34mdebug[39m]: [Pipeline] test_cdr_500rows.xlsx: 500 processed, 0 failed 
+2026-04-13T05:35:06.649Z [[32minfo[39m]: Database schema ready 
+2026-04-13T05:35:06.651Z [[32minfo[39m]: [Queue] Worker ready (max 3 concurrent uploads) 
+2026-04-13T05:35:06.651Z [[32minfo[39m]: [Cleanup] Orphan file cleanup scheduled (every 1h, max age 24h) 
+2026-04-13T05:35:06.655Z [[32minfo[39m]: CDR API server running on port 3000 
+2026-04-13T05:35:50.532Z [[32minfo[39m]: [Delete] Upload f0acbbee-77fd-4bfd-9fe0-774b1a3c813d permanently deleted by b79c4034-c83a-4dd0-b8e5-14060e55f022 
+2026-04-13T05:35:57.861Z [[32minfo[39m]: [Upload] 1 file(s) queued for upload 6f5cc4e0-e527-440c-a289-1e6177e266bd 
+2026-04-13T05:35:57.863Z [[32minfo[39m]: [Pipeline] Starting: test_cdr_500rows.xlsx (upload: 6f5cc4e0-e527-440c-a289-1e6177e266bd) 
+2026-04-13T05:35:58.839Z [[32minfo[39m]: [Pipeline] ✅ test_cdr_500rows.xlsx: 0 inserted, 0 failed, 973ms, 514 rows/sec 
+2026-04-13T05:35:58.840Z [[32minfo[39m]: Cleaned up file: 1776058557847_test_cdr_500rows.xlsx 
+2026-04-13T05:35:58.841Z [[32minfo[39m]: [Queue] Job done: test_cdr_500rows.xlsx | 0 inserted | 0 failed | 973ms | 514 rows/sec | status: COMPLETE 
+2026-04-13T05:35:58.936Z [[32minfo[39m]: Batch 0: inserted 500 rows in 129ms 
+2026-04-13T05:35:58.936Z [[34mdebug[39m]: [Pipeline] test_cdr_500rows.xlsx: 500 processed, 0 failed 
+2026-04-13T05:36:46.342Z [[32minfo[39m]: [Delete] Upload 6f5cc4e0-e527-440c-a289-1e6177e266bd permanently deleted by b79c4034-c83a-4dd0-b8e5-14060e55f022 
+2026-04-13T05:47:20.512Z [[32minfo[39m]: [Upload] 1 file(s) queued for upload 2bda32cd-539c-4e6a-9905-8d1919114cc2 
+2026-04-13T05:47:20.513Z [[32minfo[39m]: [Pipeline] Starting: test_cdr_500rows.xlsx (upload: 2bda32cd-539c-4e6a-9905-8d1919114cc2) 
+2026-04-13T05:47:20.741Z [[32minfo[39m]: [Pipeline] ✅ test_cdr_500rows.xlsx: 0 inserted, 0 failed, 225ms, 2222 rows/sec 
+2026-04-13T05:47:20.742Z [[32minfo[39m]: Cleaned up file: 1776059240503_test_cdr_500rows.xlsx 
+2026-04-13T05:47:20.743Z [[32minfo[39m]: [Queue] Job done: test_cdr_500rows.xlsx | 0 inserted | 0 failed | 225ms | 2222 rows/sec | status: COMPLETE 
+2026-04-13T05:47:20.836Z [[32minfo[39m]: Batch 0: inserted 500 rows in 122ms 
+2026-04-13T05:47:20.837Z [[34mdebug[39m]: [Pipeline] test_cdr_500rows.xlsx: 500 processed, 0 failed 
+2026-04-13T05:49:52.304Z [[32minfo[39m]: Database schema ready 
+2026-04-13T05:49:52.306Z [[32minfo[39m]: [Queue] Worker ready (max 3 concurrent uploads) 
+2026-04-13T05:49:52.306Z [[32minfo[39m]: [Cleanup] Orphan file cleanup scheduled (every 1h, max age 24h) 
+2026-04-13T05:49:52.309Z [[32minfo[39m]: CDR API server running on port 3000 
+2026-04-13T05:52:12.925Z [[32minfo[39m]: Database schema ready 
+2026-04-13T05:52:12.927Z [[32minfo[39m]: [Queue] Worker ready (max 3 concurrent uploads) 
+2026-04-13T05:52:12.928Z [[32minfo[39m]: [Cleanup] Orphan file cleanup scheduled (every 1h, max age 24h) 
+2026-04-13T05:52:12.931Z [[32minfo[39m]: CDR API server running on port 3000 
+2026-04-13T05:52:37.369Z [[32minfo[39m]: [Delete] Upload 2bda32cd-539c-4e6a-9905-8d1919114cc2 permanently deleted by b79c4034-c83a-4dd0-b8e5-14060e55f022 
+2026-04-13T05:52:51.727Z [[32minfo[39m]: [Upload] 1 file(s) queued for upload 726ae2eb-4fea-4a04-a3ae-3ad875a81bc5 
+2026-04-13T05:52:51.731Z [[32minfo[39m]: [Pipeline] Starting: test_cdr_500rows.xlsx (upload: 726ae2eb-4fea-4a04-a3ae-3ad875a81bc5) 
+2026-04-13T05:52:52.501Z [[32minfo[39m]: Batch 0: inserted 500 rows in 164ms 
+2026-04-13T05:52:52.502Z [[34mdebug[39m]: [Pipeline] test_cdr_500rows.xlsx: 500 processed, 0 failed 
+2026-04-13T05:52:52.510Z [[32minfo[39m]: [Pipeline] ✅ test_cdr_500rows.xlsx: 500 inserted, 0 failed, 771ms, 649 rows/sec 
+2026-04-13T05:52:52.511Z [[32minfo[39m]: Cleaned up file: 1776059571709_test_cdr_500rows.xlsx 
+2026-04-13T05:52:52.513Z [[32minfo[39m]: [Queue] Job done: test_cdr_500rows.xlsx | 500 inserted | 0 failed | 771ms | 649 rows/sec | status: COMPLETE 
+2026-04-13T05:53:39.196Z [[32minfo[39m]: [Delete] Upload 726ae2eb-4fea-4a04-a3ae-3ad875a81bc5 permanently deleted by b79c4034-c83a-4dd0-b8e5-14060e55f022 
+2026-04-13T05:53:54.470Z [[32minfo[39m]: [Upload] 1 file(s) queued for upload bab28f15-da3b-4b3a-974d-49fd2300a6ac 
+2026-04-13T05:53:54.472Z [[32minfo[39m]: [Pipeline] Starting: products raw data.csv (upload: bab28f15-da3b-4b3a-974d-49fd2300a6ac) 
+2026-04-13T05:53:54.490Z [[32minfo[39m]: Batch 0: inserted 45 rows in 12ms 
+2026-04-13T05:53:54.495Z [[32minfo[39m]: [Pipeline] ✅ products raw data.csv: 45 inserted, 0 failed, 19ms, 2368 rows/sec 
+2026-04-13T05:53:54.496Z [[32minfo[39m]: Cleaned up file: 1776059634465_products_raw_data.csv 
+2026-04-13T05:53:54.497Z [[32minfo[39m]: [Queue] Job done: products raw data.csv | 45 inserted | 0 failed | 19ms | 2368 rows/sec | status: COMPLETE 
+2026-04-13T05:58:45.143Z [[32minfo[39m]: Shutting down... 
+2026-04-13T05:58:49.180Z [[32minfo[39m]: Database schema ready 
+2026-04-13T05:58:49.183Z [[32minfo[39m]: [Queue] Worker ready (max 3 concurrent uploads) 
+2026-04-13T05:58:49.183Z [[32minfo[39m]: [Cleanup] Orphan file cleanup scheduled (every 1h, max age 24h) 
+2026-04-13T05:58:49.186Z [[32minfo[39m]: CDR API server running on port 3000 
+2026-04-13T06:00:09.682Z [[32minfo[39m]: [Upload] 1 file(s) queued for upload fc68acea-c8d5-4fc2-8522-4feffc903f23 
+2026-04-13T06:00:09.685Z [[32minfo[39m]: [Pipeline] Starting: test_cdr_500rows.xlsx (upload: fc68acea-c8d5-4fc2-8522-4feffc903f23) 
+2026-04-13T06:00:10.386Z [[32minfo[39m]: Batch 0: inserted 500 rows in 114ms 
+2026-04-13T06:00:10.387Z [[34mdebug[39m]: [Pipeline] test_cdr_500rows.xlsx: 500 processed, 0 failed 
+2026-04-13T06:00:10.393Z [[32minfo[39m]: [Pipeline] ✅ test_cdr_500rows.xlsx: 500 inserted, 0 failed, 702ms, 712 rows/sec 
+2026-04-13T06:00:10.394Z [[32minfo[39m]: Cleaned up file: 1776060009667_test_cdr_500rows.xlsx 
+2026-04-13T06:00:10.395Z [[32minfo[39m]: [Queue] Job done: test_cdr_500rows.xlsx | 500 inserted | 0 failed | 702ms | 712 rows/sec | status: COMPLETE 
+2026-04-13T06:01:03.266Z [[32minfo[39m]: [Upload] 1 file(s) queued for upload f42f8b8a-67f8-47ec-8f4c-07ea5bbd3001 
+2026-04-13T06:01:03.269Z [[32minfo[39m]: [Pipeline] Starting: test_cdr_500rows.xlsx (upload: f42f8b8a-67f8-47ec-8f4c-07ea5bbd3001) 
+2026-04-13T06:01:03.538Z [[32minfo[39m]: Batch 0: inserted 500 rows in 134ms 
+2026-04-13T06:01:03.538Z [[34mdebug[39m]: [Pipeline] test_cdr_500rows.xlsx: 500 processed, 0 failed 
+2026-04-13T06:01:03.574Z [[32minfo[39m]: [Pipeline] ✅ test_cdr_500rows.xlsx: 500 inserted, 0 failed, 270ms, 1852 rows/sec 
+2026-04-13T06:01:03.575Z [[32minfo[39m]: Cleaned up file: 1776060063258_test_cdr_500rows.xlsx 
+2026-04-13T06:01:03.576Z [[32minfo[39m]: [Queue] Job done: test_cdr_500rows.xlsx | 500 inserted | 0 failed | 270ms | 1852 rows/sec | status: COMPLETE 
+2026-04-13T06:01:51.941Z [[32minfo[39m]: [Delete] Upload bab28f15-da3b-4b3a-974d-49fd2300a6ac permanently deleted by b79c4034-c83a-4dd0-b8e5-14060e55f022 
+2026-04-13T06:03:04.112Z [[32minfo[39m]: [Delete] Upload f42f8b8a-67f8-47ec-8f4c-07ea5bbd3001 permanently deleted by b79c4034-c83a-4dd0-b8e5-14060e55f022 
+2026-04-13T06:03:06.469Z [[32minfo[39m]: [Delete] Upload fc68acea-c8d5-4fc2-8522-4feffc903f23 permanently deleted by b79c4034-c83a-4dd0-b8e5-14060e55f022 
+2026-04-13T06:17:43.286Z [[32minfo[39m]: Shutting down... 
+2026-04-13T06:17:52.365Z [[32minfo[39m]: Database schema ready 
+2026-04-13T06:17:52.369Z [[32minfo[39m]: [Queue] Worker ready (max 3 concurrent uploads) 
+2026-04-13T06:17:52.370Z [[32minfo[39m]: [Cleanup] Orphan file cleanup scheduled (every 1h, max age 24h) 
+2026-04-13T06:17:52.376Z [[32minfo[39m]: CDR API server running on port 3000 
+2026-04-13T06:20:08.232Z [[32minfo[39m]: Shutting down... 
+2026-04-13T06:20:54.118Z [[32minfo[39m]: Database schema ready 
+2026-04-13T06:20:54.122Z [[32minfo[39m]: [Queue] Worker ready (max 3 concurrent uploads) 
+2026-04-13T06:20:54.123Z [[32minfo[39m]: [Cleanup] Orphan file cleanup scheduled (every 1h, max age 24h) 
+2026-04-13T06:20:54.130Z [[32minfo[39m]: CDR API server running on port 3000 
+2026-04-13T06:21:23.488Z [[32minfo[39m]: [Upload] 1 file(s) queued for upload 0c916b9d-4dc1-4070-b83a-bb923a52f0f3 
+2026-04-13T06:21:23.513Z [[32minfo[39m]: [Pipeline] Starting: test_cdr_500rows.xlsx (upload: 0c916b9d-4dc1-4070-b83a-bb923a52f0f3) 
+2026-04-13T06:21:27.146Z [[32minfo[39m]: Batch 0: inserted 500 rows in 654ms 
+2026-04-13T06:21:27.147Z [[34mdebug[39m]: [Pipeline] test_cdr_500rows.xlsx: 500 processed, 0 failed 
+2026-04-13T06:21:27.164Z [[32minfo[39m]: [Pipeline] ✅ test_cdr_500rows.xlsx: 500 inserted, 0 failed, 3636ms, 138 rows/sec 
+2026-04-13T06:21:27.167Z [[32minfo[39m]: Cleaned up file: 1776061283451_test_cdr_500rows.xlsx 
+2026-04-13T06:21:27.169Z [[32minfo[39m]: [Queue] Job done: test_cdr_500rows.xlsx | 500 inserted | 0 failed | 3636ms | 138 rows/sec | status: COMPLETE 
+2026-04-13T06:21:45.504Z [[32minfo[39m]: [Upload] 1 file(s) queued for upload 350218e0-3488-49f2-b1c7-0ad7633e6c38 
+2026-04-13T06:21:45.508Z [[32minfo[39m]: [Pipeline] Starting: test_cdr_500rows.xlsx (upload: 350218e0-3488-49f2-b1c7-0ad7633e6c38) 
+2026-04-13T06:21:46.375Z [[32minfo[39m]: Batch 0: inserted 500 rows in 500ms 
+2026-04-13T06:21:46.378Z [[34mdebug[39m]: [Pipeline] test_cdr_500rows.xlsx: 500 processed, 0 failed 
+2026-04-13T06:21:46.403Z [[32minfo[39m]: [Pipeline] ✅ test_cdr_500rows.xlsx: 500 inserted, 0 failed, 871ms, 574 rows/sec 
+2026-04-13T06:21:46.407Z [[32minfo[39m]: Cleaned up file: 1776061305487_test_cdr_500rows.xlsx 
+2026-04-13T06:21:46.413Z [[32minfo[39m]: [Queue] Job done: test_cdr_500rows.xlsx | 500 inserted | 0 failed | 871ms | 574 rows/sec | status: COMPLETE 
+2026-04-13T06:26:25.685Z [[32minfo[39m]: [Delete] Upload 350218e0-3488-49f2-b1c7-0ad7633e6c38 permanently deleted by b79c4034-c83a-4dd0-b8e5-14060e55f022 
+2026-04-13T06:26:27.687Z [[32minfo[39m]: [Delete] Upload 0c916b9d-4dc1-4070-b83a-bb923a52f0f3 permanently deleted by b79c4034-c83a-4dd0-b8e5-14060e55f022 
+2026-04-13T06:37:26.080Z [[32minfo[39m]: [Upload] 1 file(s) queued for upload d4eb9cce-c450-4c54-bc2e-1b4effb24ab5 
+2026-04-13T06:37:26.083Z [[32minfo[39m]: [Pipeline] Starting: test_cdr_500rows.xlsx (upload: d4eb9cce-c450-4c54-bc2e-1b4effb24ab5) 
+2026-04-13T06:37:26.769Z [[32minfo[39m]: Batch 0: inserted 500 rows in 370ms 
+2026-04-13T06:37:26.770Z [[34mdebug[39m]: [Pipeline] test_cdr_500rows.xlsx: 500 processed, 0 failed 
+2026-04-13T06:37:26.783Z [[32minfo[39m]: [Pipeline] ✅ test_cdr_500rows.xlsx: 500 inserted, 0 failed, 688ms, 727 rows/sec 
+2026-04-13T06:37:26.786Z [[32minfo[39m]: Cleaned up file: 1776062246059_test_cdr_500rows.xlsx 
+2026-04-13T06:37:26.788Z [[32minfo[39m]: [Queue] Job done: test_cdr_500rows.xlsx | 500 inserted | 0 failed | 688ms | 727 rows/sec | status: COMPLETE 
+2026-04-13T06:42:38.847Z [[32minfo[39m]: Database schema ready 
+2026-04-13T06:42:38.851Z [[32minfo[39m]: [Queue] Worker ready (max 3 concurrent uploads) 
+2026-04-13T06:42:38.852Z [[32minfo[39m]: [Cleanup] Orphan file cleanup scheduled (every 1h, max age 24h) 
+2026-04-13T06:42:38.858Z [[32minfo[39m]: CDR API server running on port 3000 
+2026-04-13T06:49:02.810Z [[32minfo[39m]: [Delete] Upload d4eb9cce-c450-4c54-bc2e-1b4effb24ab5 permanently deleted by 7e834977-f506-4be8-9b70-7430a798f083 
+2026-04-13T07:26:30.942Z [[32minfo[39m]: Database schema ready 
+2026-04-13T07:26:30.948Z [[32minfo[39m]: [Queue] Worker ready (max 3 concurrent uploads) 
+2026-04-13T07:26:30.949Z [[32minfo[39m]: [Cleanup] Orphan file cleanup scheduled (every 1h, max age 24h) 
+2026-04-13T07:26:30.960Z [[32minfo[39m]: CDR API server running on port 3000 

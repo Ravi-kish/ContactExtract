@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from './core/services/auth.service';
 import { ToastComponent } from './shared/toast/toast.component';
+import { ActivityService } from './core/services/activity.service';
 
 @Component({
   selector: 'app-root',
@@ -15,13 +16,13 @@ import { ToastComponent } from './shared/toast/toast.component';
         <nav class="sidebar">
           <div class="sidebar-brand">
             <span class="material-icons">analytics</span>
-            <span>CDR Platform</span>
+            <span>IONORA</span>
           </div>
           <ul class="sidebar-nav">
             <li>
               <a routerLink="/upload" routerLinkActive="active">
                 <span class="material-icons">upload_file</span>
-                Upload CDRs
+                Upload Records
               </a>
             </li>
             <li>
@@ -95,6 +96,12 @@ import { ToastComponent } from './shared/toast/toast.component';
     }
   `]
 })
-export class AppComponent {
-  constructor(public auth: AuthService) {}
+export class AppComponent implements OnInit {
+  constructor(public auth: AuthService, private activity: ActivityService) {}
+
+  ngOnInit(): void {
+    if (this.auth.isLoggedIn()) {
+      this.activity.start();
+    }
+  }
 }
